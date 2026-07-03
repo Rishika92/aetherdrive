@@ -3,6 +3,7 @@ import cors from "cors";
 import authRoutes from "./routes/auth.routes.js";
 import folderRoutes from "./routes/folder.routes.js";
 import fileRoutes from "./routes/file.routes.js";
+import dashboardRoutes from "./routes/dashboard.routes.js";
 const app = express();
 
 // Middleware
@@ -26,4 +27,5 @@ app.get("/api/health", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/folders", folderRoutes);
 app.use("/api/files", fileRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 export default app;
