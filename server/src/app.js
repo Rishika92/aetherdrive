@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import authRoutes from "./routes/auth.routes.js";
 import folderRoutes from "./routes/folder.routes.js";
+import fileRoutes from "./routes/file.routes.js";
 const app = express();
 
 // Middleware
@@ -24,4 +25,5 @@ app.get("/api/health", (req, res) => {
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/folders", folderRoutes);
+app.use("/api/files", fileRoutes);
 export default app;

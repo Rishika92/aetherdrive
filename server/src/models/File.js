@@ -2,33 +2,13 @@ import mongoose from "mongoose";
 
 const fileSchema = new mongoose.Schema(
   {
-    fileName: {
+    name: {
       type: String,
       required: true,
       trim: true,
     },
 
     originalName: {
-      type: String,
-      required: true,
-    },
-
-    size: {
-      type: Number,
-      required: true,
-    },
-
-    mimeType: {
-      type: String,
-      required: true,
-    },
-
-    fileUrl: {
-      type: String,
-      required: true,
-    },
-
-    publicId: {
       type: String,
       required: true,
     },
@@ -45,6 +25,26 @@ const fileSchema = new mongoose.Schema(
       default: null,
     },
 
+    url: {
+      type: String,
+      required: true,
+    },
+
+    publicId: {
+      type: String,
+      required: true,
+    },
+
+    mimeType: {
+      type: String,
+      required: true,
+    },
+
+    size: {
+      type: Number,
+      required: true,
+    },
+
     isDeleted: {
       type: Boolean,
       default: false,
@@ -55,6 +55,4 @@ const fileSchema = new mongoose.Schema(
   }
 );
 
-const File = mongoose.model("File", fileSchema);
-
-export default File;
+export default mongoose.model("File", fileSchema);
